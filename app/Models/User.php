@@ -9,8 +9,11 @@ use Illuminate\Notifications\Notifiable;
 use Illuminate\Auth\MustVerifyEmail as MustVerifyEmailTrait;
 use Auth;
 
+use Spatie\Permission\Traits\HasRoles;
+
 class User extends Authenticatable implements MustVerifyEmailContract
 {
+    use HasRoles;
     use HasFactory, Notifiable, MustVerifyEmailTrait;
 
     protected $fillable = [
